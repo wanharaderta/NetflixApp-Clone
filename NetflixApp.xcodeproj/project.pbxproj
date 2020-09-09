@@ -16,6 +16,7 @@
 		8371509A250501C400A9B2DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83715099250501C400A9B2DA /* Assets.xcassets */; };
 		8371509D250501C400A9B2DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8371509C250501C400A9B2DA /* Preview Assets.xcassets */; };
 		837150A72505034D00A9B2DA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837150A62505034D00A9B2DA /* HomeView.swift */; };
+		837FF6D9250924CA00BF549B /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FF6D8250924CA00BF549B /* HomeVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		8371509C250501C400A9B2DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8371509E250501C400A9B2DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		837150A62505034D00A9B2DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		837FF6D8250924CA00BF549B /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +111,19 @@
 		837150A52505033600A9B2DA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				837FF6D72509249F00BF549B /* ViewModels */,
 				837150A62505034D00A9B2DA /* HomeView.swift */,
 				836074292507CF3100063421 /* StandardHomeMovie.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		837FF6D72509249F00BF549B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				837FF6D8250924CA00BF549B /* HomeVM.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 			files = (
 				8360742D2507CFB700063421 /* GlobalHelpers.swift in Sources */,
 				837150A72505034D00A9B2DA /* HomeView.swift in Sources */,
+				837FF6D9250924CA00BF549B /* HomeVM.swift in Sources */,
 				83715098250501C200A9B2DA /* ContentView.swift in Sources */,
 				8360742A2507CF3100063421 /* StandardHomeMovie.swift in Sources */,
 				836074282507CE4400063421 /* Movie.swift in Sources */,
