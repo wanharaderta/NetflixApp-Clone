@@ -8,11 +8,40 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    var viewModel = HomeVM()
+    
     var body: some View {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
+            
+            ScrollView(showsIndicators: false){
+                LazyVStack {
+                    ForEach(viewModel.allCategories,id: \.self) { category in
+                        VStack {
+                            HStack {
+                                Text(category)
+                                    .font(.title3)
+                                    .bold()
+                                Spacer()
+                            }
+                            
+                            ScrollView(.horizontal, showsIndicators: false, content: {
+                                HStack {
+                                    ForEach(viewModel.getMovie(forCat: category)){ movie in
+                                        StandardHomeMovie(movie: movie)
+                                            .frame(width: 150, height: 250)
+                                            .padding(.horizontal, 10)
+                                    }
+                                }
+                            })
+                        }
+                    }
+                }
+            }
         }
+        .foregroundColor(.white)
     }
 }
 

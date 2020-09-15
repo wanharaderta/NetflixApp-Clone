@@ -8,5 +8,6 @@
 import Foundation
 
 
-let exampleMovie = Movie(id: UUID().uuidString, name: "Dark",
-                         thumbnail: URL(string: "https://upload.wikimedia.org/wikipedia/en/4/4d/The-Message.jpg")!)
+let exampleMovie = Movie(id: UUID().uuidString, name: "Dark",thumbnail: URL(string: "https://m.media-amazon.com/images/M/MV5BMTM4OTIxMDIyOV5BMl5BanBnXkFtZTcwNTk2MzkwMw@@._V1_.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"])
+
+let exampleMovies : [Movie] = [exampleMovie,exampleMovie,exampleMovie,exampleMovie,exampleMovie]
