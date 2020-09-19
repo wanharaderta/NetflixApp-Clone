@@ -38,6 +38,7 @@
                         ForEach(movie.categories, id:\.self){ category in
                             HStack{
                                 Text(category)
+                                    .font(.footnote)
                                 if(!isCategoryLast(category)){
                                     Image(systemName: "circle.fill")
                                         .foregroundColor(.blue)
@@ -45,6 +46,24 @@
                                 }
                             }
                         }
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        
+                        SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true){
+                            
+                        }
+                        Spacer()
+                        
+                        Text("Play Button")
+                        
+                        Spacer()
+                        SmallVerticalButton(text: "Info", isOnImage: "info.circle", isOffImage: "info.circle", isOn: true){
+                            
+                        }
+                        
+                        Spacer()
                     }
                 }
             }
