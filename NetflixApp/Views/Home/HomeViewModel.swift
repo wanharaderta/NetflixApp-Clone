@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeVM: ObservableObject {
+class HomeViewModel: ObservableObject {
     
     @Published var movies: [String: [Movie]] = [:]
     

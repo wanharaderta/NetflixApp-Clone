@@ -1,78 +1,86 @@
-    //
-    //  TopMoviePreview.swift
-    //  NetflixApp
-    //
-    //  Created by Wanhar on 13/09/20.
-    //
+//
+//  TopMoviePreview.swift
+//  NetflixApp
+//
+//  Created by Wanhar on 20/09/20.
+//
+
+import SwiftUI
+import KingfisherSwiftUI
+
+struct TopMoviePreview: View {
+    var movie: Movie
     
-    import SwiftUI
-    import KingfisherSwiftUI
-    
-    struct TopMoviePreview: View {
+    func isCategoryLast(_ cat:String) -> Bool {
+        let catCount = movie.categories.count
         
-        var movie: Movie
-        
-        func isCategoryLast(_ cat:String) -> Bool {
-            let catCount = movie.categories.count
-            
-            if let index = movie.categories.firstIndex(of: cat){
-                if index + 1 != catCount {
-                    return false
-                }
+        if let index = movie.categories.firstIndex(of: cat){
+            if index + 1 != catCount {
+                return false
             }
-            
-            return true
         }
         
-        var body: some View {
+        return true
+    }
+    
+    var body: some View {
+        ZStack {
+            KFImage(movie.thumbnail)
+                .resizable()
+                .scaledToFill()
+                .clipped()
+            
             VStack {
-                KFImage(movie.thumbnail)
-                    .resizable()
-                    .scaledToFill()
-                    .clipped()
+                Spacer()
                 
-                VStack {
-                    Spacer()
-                    
-                    HStack {
-                        ForEach(movie.categories, id:\.self){ category in
-                            HStack{
-                                Text(category)
-                                    .font(.footnote)
-                                if(!isCategoryLast(category)){
-                                    Image(systemName: "circle.fill")
-                                        .foregroundColor(.blue)
-                                        .font(.system(size: 3))
-                                }
+                HStack {
+                    ForEach(movie.categories, id:\.self){ category in
+                        HStack{
+                            Text(category)
+                                .font(.footnote)
+                            if(!isCategoryLast(category)){
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(.blue)
+                                    .font(.system(size: 3))
                             }
                         }
                     }
+                }.padding()
+                
+                HStack {
+                    Spacer()
                     
-                    HStack {
-                        Spacer()
+                    SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true){
                         
-                        SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true){
-                            
-                        }
-                        Spacer()
-                        
-                        Text("Play Button")
-                        
-                        Spacer()
-                        SmallVerticalButton(text: "Info", isOnImage: "info.circle", isOffImage: "info.circle", isOn: true){
-                            
-                        }
-                        
-                        Spacer()
                     }
+                    Spacer()
+                    
+                    WhiteButton(text: "play", imageName: "play.fill"){
+                        
+                    }
+                    .frame(width: 120)
+                    
+                    Spacer()
+                    SmallVerticalButton(text: "Info", isOnImage: "info.circle", isOffImage: "info.circle", isOn: true){
+                        
+                    }
+                    
+                    Spacer()
                 }
+                .padding(.bottom,10)
+               
             }
-            .foregroundColor(.white)
+            .background(
+                LinearGradient.blackOpacityGradient
+                    .padding(.top,250)
+            )
         }
+        .foregroundColor(.white)
     }
-    
-    struct TopMoviePreview_Previews: PreviewProvider {
-        static var previews: some View {
-            TopMoviePreview(movie: exampleMovie)
-        }
+}
+
+struct TopMoviePreview_Previews: PreviewProvider {
+    static var previews: some View {
+        TopMoviePreview(movie: exampleMovie)
     }
+}
