@@ -21,9 +21,12 @@ struct HomeView: View {
             ScrollView(showsIndicators: false){
                 LazyVStack {
                     
+                    TopRowButtons()
+                    
                     TopMoviePreview(movie: exampleMovie)
                         .frame(width: screen.width)
                         .padding(.top, -120)
+                        .zIndex(-1)
                     
                     ForEach(viewModel.allCategories,id: \.self) { category in
                         VStack {
@@ -33,12 +36,13 @@ struct HomeView: View {
                                     .bold()
                                 Spacer()
                             }
+                            .padding(.horizontal, 10)
                             
                             ScrollView(.horizontal, showsIndicators: false, content: {
                                 HStack {
                                     ForEach(viewModel.getMovie(forCat: category)){ movie in
                                         StandardHomeMovie(movie: movie)
-                                            .frame(width: 150, height: 250)
+                                            .frame(width: 155, height: 215)
                                             .padding(.horizontal, 10)
                                     }
                                 }
@@ -55,5 +59,52 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+struct TopRowButtons: View {
+    var body: some View {
+        
+        HStack {
+            Button(action: {
+                //action
+            }, label: {
+                Image("netflix")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50)
+            })
+            .buttonStyle(PlainButtonStyle())
+
+            Spacer()
+            
+            Button(action: {
+                //action
+            }, label: {
+                Text("TV Shows")
+            })
+            .buttonStyle(PlainButtonStyle())
+            
+            Spacer()
+            
+            Button(action: {
+                //action
+            }, label: {
+                Text("Movies")
+            })
+            .buttonStyle(PlainButtonStyle())
+            
+            Spacer()
+            
+            Button(action: {
+                //action
+            }, label: {
+                Text("My List")
+            })
+            .buttonStyle(PlainButtonStyle())
+            
+        }
+        .padding(.trailing, 20)
+        .padding(.leading, 10)
     }
 }
