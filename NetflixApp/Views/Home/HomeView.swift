@@ -23,7 +23,7 @@ struct HomeView: View {
                     
                     TopRowButtons()
                     
-                    TopMoviePreview(movie: exampleMovie)
+                    TopMoviePreview(movie: exampleMovieHeader)
                         .frame(width: screen.width)
                         .padding(.top, -120)
                         .zIndex(-1)
@@ -42,7 +42,7 @@ struct HomeView: View {
                                 HStack {
                                     ForEach(viewModel.getMovie(forCat: category)){ movie in
                                         StandardHomeMovie(movie: movie)
-                                            .frame(width: 155, height: 215)
+                                            .frame(width: 155, height: 200)
                                             .padding(.horizontal, 10)
                                     }
                                 }

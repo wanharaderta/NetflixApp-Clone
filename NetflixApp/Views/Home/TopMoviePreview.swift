@@ -45,30 +45,20 @@ struct TopMoviePreview: View {
                             }
                         }
                     }
-                }.padding()
+                } .padding(.bottom, 30)
                 
                 HStack {
                     Spacer()
-                    
-                    SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true){
-                        
-                    }
+                    SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true) { }
                     Spacer()
-                    
-                    WhiteButton(text: "play", imageName: "play.fill"){
-                        
-                    }
+                    WhiteButton(text: "play", imageName: "play.fill") {}
                     .frame(width: 120)
-                    
                     Spacer()
-                    SmallVerticalButton(text: "Info", isOnImage: "info.circle", isOffImage: "info.circle", isOn: true){
-                        
-                    }
-                    
+                    SmallVerticalButton(text: "Info", isOnImage: "info.circle", isOffImage: "info.circle", isOn: true) {}
                     Spacer()
                 }
                 .padding(.bottom,10)
-               
+                
             }
             .background(
                 LinearGradient.blackOpacityGradient

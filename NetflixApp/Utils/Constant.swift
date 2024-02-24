@@ -8,14 +8,16 @@
 import Foundation
 
 
-let exampleMovie = Movie(id: UUID().uuidString, name: "Transformers",thumbnail: URL(string: "https://images-na.ssl-images-amazon.com/images/I/51REhA8e-gL.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"])
+let exampleMovieHeader = Movie(id: UUID().uuidString, name: "Transformers",thumbnail: URL(string: "https://c4.wallpaperflare.com/wallpaper/870/684/882/optimus-prime-transformers-the-last-knight-wallpaper-preview.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"], year: 2024, rating: "TV-MA", numberOfSeasons: 1)
 
-let exampleMovie1 = Movie(id: UUID().uuidString, name: "Preman Pensiun",thumbnail: URL(string: "https://4.bp.blogspot.com/-X6edPhXHwGI/XDjM3CSS07I/AAAAAAABLxE/FB67qh6X1rgOIfdXKjujrYenuVy-oZbuQCLcBGAs/s1600/8d8db3f8-52da-41e1-81f3-b1856cc7581d.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"])
+let exampleMovie = Movie(id: UUID().uuidString, name: "Transformers",thumbnail: URL(string: "https://i.pinimg.com/originals/ab/ce/df/abcedfc6626413a38616328710eaf111.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"], year: 2024, rating: "TV-MA", numberOfSeasons: 2)
 
-let exampleMovie2 = Movie(id: UUID().uuidString, name: "Rise of The Legend",thumbnail: URL(string: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRatgMqKS7Str3V_w1ZG0325_4qe8-K-xyq45KrG3ffYsAPPpMm")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"])
+let exampleMovie1 = Movie(id: UUID().uuidString, name: "Haikyuu!! The Movie 1",thumbnail: URL(string: "https://m.media-amazon.com/images/M/MV5BYmYyOGI4MDktZTdiZS00NWU4LWIxNjEtNjNkMGJjNTFhOTUyXkEyXkFqcGdeQXVyNjc5OTUxNjY@._V1_FMjpg_UX1000_.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"], year: 2024, rating: "TV-MA", numberOfSeasons: 3)
 
-let exampleMovie3 = Movie(id: UUID().uuidString, name: "The King",thumbnail: URL(string: "https://rexfactor.files.wordpress.com/2020/06/d3e4d-the2bking2bnetflix2bmovie2bposter.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"])
+let exampleMovie2 = Movie(id: UUID().uuidString, name: "The Boy Who Harnessed the Wind",thumbnail: URL(string: "https://m.media-amazon.com/images/I/915zPMuOWVL._AC_UF1000,1000_QL80_.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"], year: 2024, rating: "TV-MA", numberOfSeasons: 2)
 
-let exampleMovie4 = Movie(id: UUID().uuidString, name: "Pacific Rim",thumbnail: URL(string: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4FSI8TzR_2GRvu6pgNdyFRYsJX6erWLhz0l5xgPcFAkcyYODJ")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"])
+let exampleMovie3 = Movie(id: UUID().uuidString, name: "A Whisker Away ",thumbnail: URL(string: "https://m.media-amazon.com/images/M/MV5BNmY5YzYyYzktNmRhNi00ZWI3LWE2YzgtNjBkYjc2MjhhYzNmXkEyXkFqcGdeQXVyMTA3MTI2ODc5._V1_.jpg")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"], year: 2024, rating: "TV-MA", numberOfSeasons: 1)
+
+let exampleMovie4 = Movie(id: UUID().uuidString, name: "Bright",thumbnail: URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF18olWMjM4fN_dtEDm8YQRUWdpXXTereddj5OgegEHVU3XmZ8")!, categories:["Dystopian","Comedy","Exciting","Sci-Fi TV"], year: 2024, rating: "TV-MA", numberOfSeasons: 3)
 
 let exampleMovies : [Movie] = [exampleMovie,exampleMovie1,exampleMovie2,exampleMovie3,exampleMovie4]
