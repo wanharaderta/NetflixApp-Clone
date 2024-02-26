@@ -35,7 +35,41 @@ struct MovieDetail: View {
                             .frame(width: 140, height: 210)
                         
                         MovieInfoSubHeadline(movie: movie)
+                        
+                        if movie.promotionHeadline != nil {
+                            Text(movie.promotionHeadline!)
+                                .bold()
+                                .font(.headline)
+                        }
+                        
+                        PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red) {
+                            
+                        }
+                        
+                        CurrentEpisodeInfoView(movie: movie)
+                        
+                        CastInfoView(movie: movie)
+                        
+                        HStack(spacing: 60) {
+                            SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true) {
+                                //
+                            }
+                            
+                            SmallVerticalButton(text: "Rate", isOnImage: "hand.thumbsup.fill", isOffImage: "thumbsup.fill", isOn: true) {
+                                //
+                            }
+                            
+                            SmallVerticalButton(text: "Share", isOnImage: "square.and.arrow.up", isOffImage: "square.and.arrow.up", isOn: true) {
+                                //
+                            }
+                            
+                            Spacer()
+                        }
+                        .padding(.leading, 20)
+                        
+                        CustomTabSwitcherView()
                     }
+                    .padding(.horizontal, 10)
                 }
                 
                 Spacer()
@@ -55,7 +89,7 @@ struct MovieInfoSubHeadline: View {
     var movie: Movie
     
     var body: some View {
-        HStack {
+        HStack(spacing: 20) {
             Image(systemName: "hand.thumbsup.fill")
                 .foregroundColor(.white)
             
@@ -84,5 +118,53 @@ struct RatingView: View {
                 .bold()
         }
         .frame(width: 50, height: 20)
+    }
+}
+
+struct CastInfoView: View {
+    
+    var movie: Movie
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Cast: \(movie.cast)")
+                
+                Spacer()
+            }
+            
+            HStack {
+                Text("Creators: \(movie.creator)")
+                
+                Spacer()
+            }
+        }
+        .font(.caption)
+        .foregroundColor(.gray)
+        .padding(.vertical, 10)
+    }
+}
+
+struct CurrentEpisodeInfoView: View {
+    
+    var movie: Movie
+    
+    var body: some View {
+        Group {
+            HStack {
+                Text(movie.episodeInfoDisplay)
+                    .bold()
+                
+                Spacer()
+            }
+            .padding(.vertical, 10)
+            
+            HStack() {
+                Text(movie.episodeDescriptionDisplay)
+                    .font(.headline)
+                
+                Spacer()
+            }
+        }
     }
 }

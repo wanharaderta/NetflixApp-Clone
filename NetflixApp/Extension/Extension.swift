@@ -14,3 +14,11 @@ extension LinearGradient {
         startPoint: .top, endPoint: .bottom
     )
 }
+
+extension String {
+    func withOfString(usingFont font: UIFont) -> CGFloat {
+        let fontAttribute = [NSAttributedString.Key.font: font]
+        let size = self.size(withAttributes: fontAttribute)
+        return size.width
+    }
+}

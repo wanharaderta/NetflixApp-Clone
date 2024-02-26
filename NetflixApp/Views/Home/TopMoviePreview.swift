@@ -51,7 +51,7 @@ struct TopMoviePreview: View {
                     Spacer()
                     SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true) { }
                     Spacer()
-                    WhiteButton(text: "play", imageName: "play.fill") {}
+                    PlayButton(text: "play", imageName: "play.fill") {}
                     .frame(width: 120)
                     Spacer()
                     SmallVerticalButton(text: "Info", isOnImage: "info.circle", isOffImage: "info.circle", isOn: true) {}
